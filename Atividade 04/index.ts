@@ -79,18 +79,33 @@
 // }
 
 // Exercício 8
-// let num0: Number = 0
 // let num1 = Number(prompt(`Digite um numero:`))
 // let num2 = Number(prompt(`Digite o segundo numero:`))
 // let num3 = Number(prompt(`Digite o terceiro numero:`))
+// let lista1:number[] = [num1, num2, num3]
+// let lista2:number[] = [num1, num2, num3]
 
 // let maior = undefined
 // let segundoMaior = undefined
 // let terceiroMaior = undefined
 
+// // testa para o maior
 // if (num1 >= num2) {
 //     maior = num1
+// } else {
+//     maior = num2
 // }
+// if (maior < num3) {
+//     maior = num3
+
+// for (let index = 0; index < lista1.length; index++) {
+//     if (maior < lista1[i]):
+//         maior = lista1[i]
+    
+// }
+
+
+
 
 
 // Exercício 9
