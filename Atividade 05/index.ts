@@ -112,19 +112,26 @@
 // }
 // Exercício 18
 // let lista: number[] = []
-// let maior: number = 0
+
 // for (let index = 0; index < 10; index++) {
 //     let numero = Number(prompt(`Digite um numero:`))
 //     lista.push(numero)
 // }
 
+// let maior: number = lista[0]
+// let menor: number = lista[0]
+
 // for (let index = 0; index < lista.length; index++) {
 //     if (lista[index] >= maior){
 //         maior = lista[index]
 //     }
+
+//     if (lista[index] <= menor){
+//         menor = lista[index]
+//     }
 // }
 
-// console.log(maior)
+// alert(`O maior número digitado foi: ${maior}\nO menor número digitado foi: ${menor}`);
 
 // Exercício 19
 // for (let index = 1; index <= 100; index++) {
