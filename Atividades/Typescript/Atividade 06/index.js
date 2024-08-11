@@ -16,10 +16,10 @@
 // }
 // Exercício 05
 // let i: number = 0
-// // do {
-// //     console.log(i)
-// //     i++
-// // } while (i < 5);
+// do {
+//     console.log(i)
+//     i++
+// } while (i < 5);
 // Exercício 06
 // let index: number = 1
 // while (index <= 10) {
@@ -113,7 +113,6 @@
 //     resultado += (Number(numeroArray[index])) ** 3
 // }
 // alert(`Resultado: ${resultado}`)
-// 
 // Exercício 14
 // let index: number = 1
 // let indexArray: number[] = []
@@ -225,7 +224,7 @@
 //     alert(`Programa encerrado!`)
 // } else {
 //     while (numero !== 0) {
-//         if (numero % 3 ==0) {
+//         if (numero % 3 == 0) {
 //             numeroArray.push(numero)
 //         }
 //         numero = Number(prompt(`Digite um numero: `))
@@ -238,30 +237,88 @@
 //     alert(`A media dos numeros divisiveis por 3 informados e de: ${media}`)
 // }
 // Exercício 21
+// let numero = Number(prompt(`Digite um numero: `))
+// let numeroString: string = String(numero)
+// let numeroArray: string[] = numeroString.split("")
+// let contador: number = 0
+// if (numero == 0) {
+//     alert(`Programa encerrado`)
+// } else {
+//     while (numero !== 0) {
+//         if (numeroArray.length > 3) {
+//             contador++
+//         }
+//         numero = Number(prompt(`Digite um numero: `))
+//     }
+//     if (contador > 0) {
+//         alert(`Foram digitados ${contador} numeros com mais de 3 digitos!`)
+//     } else {
+//         alert(`Nenhum numero digitado tem mais de 3 digitos!`)
+//     }
+// }
 // Exercício 22
+// let numero = Number(prompt(`Digite um numero no intervalo entre 50 e 100:`))
+// let numeroArray: number[] = []
+// while (numero !== 0) {
+//     if (50 <= numero && numero <= 100) {
+//         numeroArray.push(numero)
+//     }
+//     numero = Number(prompt(`Digite um numero no intervalo entre 50 e 100:`))
+// }
+// if (numeroArray.length > 0) {
+//     let soma: number = 0
+//     for (let index = 0; index < numeroArray.length; index++) {
+//         soma += numeroArray[index]
+//     }
+//     let media: number = soma / numeroArray.length
+//     alert(`A media entre os numeros digitados que estao contidos no intervalo [50, 100] e: ${media}.`)
+// } else {
+//     alert(`Nao foi digitado nenhum numero dentro do intervalo.`)
+// }
 // Exercício 23
+// let index = Number(prompt("Digite um numero: "))
+// let listaNumeros: number[] = []
+// if (index == 0) {
+//     alert("Lista vazia!")
+// } else {
+//     listaNumeros.push(index)
+// }
+// while (index !== 0) {
+//     index = Number(prompt("Digite um numero: "))
+//     if (index !== 0 && index > 0 && index % 2 == 1) {
+//         listaNumeros.push(index)
+//     }
+// }
+// if (listaNumeros.length > 0) {
+//     let varTeste: number = listaNumeros[0]
+//     let menor: number = listaNumeros[0]
+//     for (let index = 0; index < listaNumeros.length; index++) {
+//         varTeste = listaNumeros[index]
+//         if (varTeste <= menor) {
+//         } menor = varTeste
+//     }
+//     alert(`O menor valor positivo e impar fornecido foi: ${menor}`)
+// }
 // Exercício 24
-var numero1 = Number(prompt("Digite um numero"));
-var numerosArray = [];
-var paresArray = [];
-var imparesArray = [];
-var numero2;
-if (numero1 == 0) {
-    alert("Programa encerrado!");
-}
-else {
-    while (numero2 !== 0) {
-        numero2 = prompt("Digite um numero: ");
-    }
-    var index = numero1;
-    while (index <= numero2) {
-        if (index % 2 == 0) {
-            paresArray.push(index);
-        }
-        else if (index % 2 == 1) {
-            imparesArray.push(index);
-        }
-        index++;
-    }
-    alert("Foram digitados ".concat(paresArray.length, " numeros pares.\nForam digitados ").concat(imparesArray.length, " numeros impares."));
-}
+// let numero1 = Number(prompt(`Digite um numero`))
+// let numerosArray: number[] = []
+// let paresArray: number[] = []
+// let imparesArray: number[] = []
+// let numero2
+// if (numero1 == 0) {
+//     alert(`Programa encerrado!`)
+// } else {
+//     while (numero2 !== 0) {
+//         numero2 = prompt(`Digite um numero: `)
+//     }
+//     let index = numero1
+//     while (index <= numero2) {
+//         if (index % 2 == 0) {
+//             paresArray.push(index)
+//         } else if (index % 2 == 1){
+//             imparesArray.push(index)
+//         }
+//         index++
+//     }
+//     alert(`Foram digitados ${paresArray.length} numeros pares.\nForam digitados ${imparesArray.length} numeros impares.`)
+// }
