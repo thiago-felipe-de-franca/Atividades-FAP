@@ -1,4 +1,4 @@
-import { randomUUID } from "crypto";
+import {v4 as randomUUID} from "uuid"
 import {faker} from "@faker-js/faker"
 
 class Post {
@@ -46,12 +46,12 @@ for (let index = 0; index < 15; index++) {
   )
   posts.push(post)
 }
+console.log("testando")
+// console.log(posts)
 
-console.log(posts)
+// const firstPost = posts[0]
 
-const firstPost = posts[0]
-
-firstPost.like()
-console.log(firstPost)
-firstPost.like()
-console.log(firstPost)
+// firstPost.like()
+// console.log(firstPost)
+// firstPost.like()
+// console.log(firstPost)
