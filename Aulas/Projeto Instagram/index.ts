@@ -1,5 +1,5 @@
-import {v4 as randomUUID} from "uuid"
-import {faker} from "@faker-js/faker"
+import { v4 as randomUUID } from "uuid"
+import { faker } from "@faker-js/faker"
 
 class Post {
   private _id: string = randomUUID()
@@ -13,8 +13,8 @@ class Post {
 
   constructor(
     userName: string,
-    avatarUrl: string, 
-    imageUrl: string, 
+    avatarUrl: string,
+    imageUrl: string,
     description: string
   ) {
     this._userName = userName;
@@ -22,8 +22,15 @@ class Post {
     this._description = description;
     this._avatarUrl = avatarUrl;
   }
+  public getUserName(): string {
+    return this._userName;
+  }
 
-  like(){
+  public getLikes(): string {
+    return String(this._numberOfLikes)
+  }
+
+  like() {
     this._isLiked = !this._isLiked
 
     if (this._isLiked == true) {
@@ -34,24 +41,30 @@ class Post {
   }
 }
 
-
 const posts: Post[] = []
+const firstPost = new Post(
+  faker.person.firstName(),
+  faker.image.avatarGitHub(),
+  faker.image.urlPicsumPhotos(),
+  faker.lorem.paragraph()
+)
 
-for (let index = 0; index < 15; index++) {
-  const post = new Post(
-    faker.person.firstName(), 
-    faker.image.avatarGitHub(), 
-    faker.image.urlPicsumPhotos(), 
-    faker.lorem.paragraph()
-  )
-  posts.push(post)
-}
 console.log("testando")
-// console.log(posts)
+console.log(firstPost)
 
-// const firstPost = posts[0]
+// Função para exibir o nome do usuário no HTML
+function showUserName(): void {
+  const userNameElement = document.getElementById('userName') as HTMLElement;
+  if (userNameElement) {
+      userNameElement.innerText = firstPost.getUserName();
+  }
+}
 
-// firstPost.like()
-// console.log(firstPost)
-// firstPost.like()
-// console.log(firstPost)
+function showLikes(): void {
+  const likesElement = document.getElementById('likes') as HTMLElement;
+  likesElement.innerHTML = firstPost.getLikes()
+}
+
+// Chama a função diretamente ao carregar o script
+showUserName();
+showLikes();
