@@ -1,43 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./index.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <title>Document</title>
-</head>
+body {
+  font-family: "Roboto", sans-serif;
+}
 
-<body>
-  <main>
-    <div class="post-container">
-      <div class="post-header">
+.post-container {
+  width: 400px;
+  height: 500px;
+  border: 1px solid black;
+  margin: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
-        <div class="left">
-          <div></div>
-          <span id="userName">user_name</span>
-        </div>
+.post-header {
+  display: flex;
+  justify-content: space-between;
+}
 
-        <div class="right">
-          follow ...
-        </div>
+.post-header .left {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
 
-      </div>
+.post-header .left>div {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  border-radius: 50%;
+  overflow: hidden;
+}
 
-      <div class="post-image" id="postImage">image</div>
+.post-header .left>div>img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
 
-      <div class="post-icons">
-        <i class="fa fa-heart-o"></i>
-        <i class="fa fa-comment-o"></i>
-        <i class="fa fa-paper-plane-o"></i>
-      </div>
 
-      <div class="post-likes" id="likes">likes</div>
-      <div class="post-description" id="postDescription">description</div>
-    </div>
-    <script type="module" src="./index.ts"></script>
-  </main>
-</body>
+.post-image {
+  background-color: black;
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
 
-</html>
+.post-image>img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.post-icons {
+  font-size: 24px;
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+.liked {
+  color: red
+}

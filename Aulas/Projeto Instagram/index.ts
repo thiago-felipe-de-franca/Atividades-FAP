@@ -1,15 +1,15 @@
-import { v4 as randomUUID } from "uuid"
-import { faker } from "@faker-js/faker"
+import { v4 as randomUUID } from "uuid";
+import { faker } from "@faker-js/faker";
 
 class Post {
-  private _id: string = randomUUID()
+  private _id: string = randomUUID();
   private _userName: string;
-  private _imageUrl: string;
   private _avatarUrl: string;
+  private _imageUrl: string;
   private _description: string;
   private _isLiked: boolean = false;
   private _numberOfLikes: number = 0;
-  private _createdAt: Date = new Date()
+  private _createdAt: Date = new Date();
 
   constructor(
     userName: string,
@@ -18,53 +18,34 @@ class Post {
     description: string
   ) {
     this._userName = userName;
+    this._avatarUrl = avatarUrl;
     this._imageUrl = imageUrl;
     this._description = description;
-    this._avatarUrl = avatarUrl;
-  }
-  public getUserName(): string {
-    return this._userName;
-  }
-
-  public getLikes(): string {
-    return String(this._numberOfLikes)
   }
 
   like() {
-    this._isLiked = !this._isLiked
+    this._isLiked = !this._isLiked;
 
-    if (this._isLiked == true) {
-      this._numberOfLikes++
+    if (this._isLiked === true) {
+      this._numberOfLikes += 1;
     } else {
-      this._numberOfLikes--
+      this._numberOfLikes -= 1;
     }
   }
 }
 
-const posts: Post[] = []
-const firstPost = new Post(
-  faker.person.firstName(),
-  faker.image.avatarGitHub(),
-  faker.image.urlPicsumPhotos(),
-  faker.lorem.paragraph()
-)
+const posts: Post[] = [];
 
-console.log("testando")
-console.log(firstPost)
+for (let index = 0; index < 15; index++) {
+  const post = new Post(
+    faker.person.firstName(),
+    faker.image.avatarGitHub(),
+    faker.image.urlPicsumPhotos(),
+    faker.lorem.paragraph()
+  );
 
-// Função para exibir o nome do usuário no HTML
-function showUserName(): void {
-  const userNameElement = document.getElementById('userName') as HTMLElement;
-  if (userNameElement) {
-      userNameElement.innerText = firstPost.getUserName();
-  }
+  posts.push(post);
 }
 
-function showLikes(): void {
-  const likesElement = document.getElementById('likes') as HTMLElement;
-  likesElement.innerHTML = firstPost.getLikes()
-}
-
-// Chama a função diretamente ao carregar o script
-showUserName();
-showLikes();
+console.log(posts);
+console.log("testando");
